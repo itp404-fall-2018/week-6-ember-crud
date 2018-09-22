@@ -1,0 +1,17 @@
+{{#link-to "posts.create"}}
+  Write a Post
+{{/link-to}}
+
+{{#each model as |post|}}
+  <div>
+    {{#link-to "posts.post" post.id}}
+      {{post.title}}
+    {{/link-to}}
+
+    <button type="button" onclick={{action "deletePost" post}}>
+      Delete
+    </button>
+  </div>
+{{/each}}
+
+{{outlet}}
